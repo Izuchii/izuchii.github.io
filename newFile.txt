@@ -1,6 +1,8 @@
-"Just retored nothing actually."
+"Just restored nothing actually."
 
 "Hello world!......"
 :)
 :>
 "Yo.. Checkout"
+
+"Some other changes" :)
