@@ -1,33 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tribute Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCC JS Tryouts</title>
 
-  <style>
-      img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: auto;
+    <link rel="stylesheet" href="/scrapple.css">
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
-  </style>
+        h1 {margin: 0;}
+        body > h1 {
+            background: greenyellow; padding: 10px;
+        }
+        body > h2 {
+            background: greenyellow; padding: 7px;
+        }
+        h4 {
+            /* padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white; */
+            margin: 0;
+            padding: 0;
+            /* line-height: 1; */
+        }
+        b { color: #e00934;
+            /* font-weight: bold; */
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .b { color: #e00934;
+            font-weight: bold;
+        }
+        pre {
+            background-color: rgb(33, 37, 41);
+            color: white;
+            padding-top: 16px;
+        }
+        [id*="demo"] {
+            background-color: rgb(33, 37, 41);
+            color: white;
+            padding: 15px;
+            border-left: 15px solid lightseagreen;
+        }
+        .div {
+            background-color: #ffc107;
+            /* background-color: rgb(255,193,7); */
+            padding: 15px;
+        }
+        .blue {
+            color: blue;
+        }
+        .green {
+            color: green;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
-  <main id="main">
-    <h1 id="title"></h1>
-    <figure>
-      <div id="img-div">
-        <img src="" alt="" id="img-div">
-        <figcaption id="img-caption"></figcaption>
-      </div>
-    </figure>
+    <h1>FCC & W3Schools JS Tryouts</h1>
+    <div id="demo1"></div>
+    <button onclick="checkCookie()">Set Cookies</button>
+    <!-- <br /> -->
+    <button onclick="delCookie()">Delete Cookies</button>
+    <br />
+    <br />
+
+
+
+    <h3>DOM | Finding HTML Objects</h3>
+    <p>The first HTML DOM Level 1 (1998), defined 11 HTML objects, object collections, and properties. These are still valid in HTML5.</p>
+    <p>Later, in HTML DOM Level 3, more objects, collections, and properties were added.</p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+                <th>DOM</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>document.anchors</td>
+            <td>Returns all &lt;a> elements that have a name attribute</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.applets</td>
+            <td><b>Deprecated</b></td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.baseURI</td>
+            <td>Returns the absolute base URI of the document</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.body</td>
+            <td>Returns the &lt;body> element</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.cookie</td>
+            <td>Returns the document's cookie</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.doctype</td>
+            <td>Returns the document's doctype</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.documentElement</td>
+            <td>Returns the &lt;html> element</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.documentMode</td>
+            <td>Returns the mode used by the browser</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.documentURI</td>
+            <td>Returns the URI of the document</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.domain</td>
+            <td>Returns the domain name of the document server</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.domConfig</td>
+            <td><b>Obsolete.</b></td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.embeds</td>
+            <td>Returns all &lt;embed> elements</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.forms</td>
+            <td>Returns all &lt;form> elements</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.head</td>
+            <td>Returns the &lt;head> element</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.images</td>
+            <td>Returns all &lt;img> elements</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.implementation</td>
+            <td>Returns the DOM implementation</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.inputEncoding</td>
+            <td>Returns the document's encoding (character set)</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.lastModified</td>
+            <td>Returns the date and time the document was updated</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.links</td>
+            <td>Returns all &lt;area> and &lt;a> elements that have a href attribute</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.readyState</td>
+            <td>Returns the (loading) status of the document</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.referrer</td>
+            <td>Returns the URI of the referrer (the linking document)</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.scripts</td>
+            <td>Returns all &lt;script> elements</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.strictErrorChecking</td>
+            <td>Returns if error checking is enforced</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>document.title</td>
+            <td>Returns the &lt;title> element</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>document.URL</td>
+            <td>Returns the complete URL of the document</td>
+            <td>1</td>
+        </tr>
+    </table>
+    <br />
+    <div id="demo2"></div>
+    <br />
+    <br />
+
+
+    <h3>DOM | Manipulation</h3>
+    <h4><b>document.open()</b>, <b>document.write()</b>, <b>document.close()</b></h4>
+    <p><strong>Replace</strong> this document/page with another content:</p>
+    <pre>
+    function myFunc() {
+        document.open("text/html", "replace");
+        document.write("&lt;h2>Learning about the HTML DOM is fun!&lt;/h2>");
+        document.close();
+    }
+    </pre>
+    <button onclick="myFunk()">Replace current document/page</button>
+    <br />
+    <br />
+
+
+
+    <h4><b>window.open()</b></h4>
+    <p>Open a new window (from/with this page as its address) and insert contents to the document/page:</p>
+    <pre>
+    function myFunck() {
+        const wOpen = window.open();
+        wOpen.document.open();
+        wOpen.document.write("&lt;h2>Hello World!&lt;/h2>");
+        wOpen.document.close();
+    }
+    </pre>
+    <button onclick="myFunck()">Open new window & add some content</button>
+    <br />
+    <br />
+
+
+    <p>Open a new window with a different page link:</p>
+    <pre>
+    function openW() {
+        window.open("https://www.w3schools.com")
+    }
+    </pre>
+    <button onclick="openW()">Open new window</button>
+    <br />
+    <br />
+
+
+    <p>Open a new window with a different page link, and control its appearance:</p>
+    <pre>
+    function openW() {
+        window.open("https://www.w3schools.com", "_blank", "toolbar=yes, location=yes, directories=no, status=no,
+        menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=400, height=400");
+    }
+    </pre>
+    <button onclick="openWi()">Open new window</button>
+    <br />
+    <br />
     
-    <div id="tribute-info">
-      <a href="/" id="tribute-link" target="_blank"></a>
-    </div>
-  </main>
+
+    <p>Open a new window, blur window, & focus window:</p>
+    <pre>
+    let myWin;
+    function openWin() {
+        myWin = window.open("", "", "width=500, height=300");
+    }
+    function blurWin() {
+        myWin.blur();
+    }
+    function focusWin() {
+        myWin.focus();
+    }
+    </pre>
+    <button onclick="openWin()">Open new window</button>
+    <button onclick="blurWin()">Blur opened window</button>
+    <button onclick="focusWin()">Focus on opened window</button>
+    <br />
+    <br />
+
+
+    <p>Open a new window, close opened window:</p>
+    <pre>
+    let myWind;
+    function openWind() {
+        myWind = window.open("", "", "width=500, height=300");
+    }
+    function closeW() {
+        myWind.close();
+    }
+    </pre>
+    <button onclick="openWind()">Open new window</button>
+    <button onclick="closeW()">Close opened window</button>
+    <br />
+    <br />
+
+
+    <p>Open a new window, close opened window, & check if window is open or not:</p>
+    <pre>
+    let myWindo;
+    const openWindo = () => myWindo = window.open("", "", "width=500, height=300");
+    const closeWi = () => myWindo.close();
+    const checkW = () => {
+        let msg = "";
+        if(!myWindo) msg = " was not opened";
+        else {
+            if(myWindo.close) msg = " was closed";
+            else msg = " is open"
+        }
+        document.getElementById("demo3").innerHTML = msg;
+    }
+    </pre>
+    <button onclick="openWindo()">Open new window</button>
+    <button onclick="closeWi()">Close opened window</button>
+    <button onclick="checkW()">Check if window is closed/opened</button>
+    <p id="demo3"></p>
+    <br />
+
+    <p>Write some text to the parent/source window:</p>
+    <pre>
+    const openWindow = () => {
+        let myWin = window.open("", "", "width=500, height=300");
+        myWin.opener.document.getElementById("demo4").innerHTML = "A new window was just opened";
+    }
+    </pre>
+    <button onclick="openWindow()">Open new window</button>
+    <p id="demo4"></p>
+    <br />
+    <br />
+
+
+    <p>Move the new window relative to its current position:</p>
+    <pre>
+    let myWndow;
+    const openWndow = () => myWndow = window.open("", "", "width=500, height=300");
+    const movWin = () => myWndow.moveBy(200, 200);
+    </pre>
+    <button onclick="openWndow()">Open new window</button>
+    <button onclick="movWin()">Move opened window</button>
+    <br />
+    <br />
+
+
+    <p>Move the new window to a specified position:</p>
+    <pre>
+    let myWindow;
+    const openWindoww = () => myWindow = window.open("", "", "width=500, height=300");
+    const movWindow = () => myWindow.moveTo(300, 0);
+    </pre>
+    <button onclick="openWindoww()">Open new window</button>
+    <button onclick="movWindow()">Move opened window</button>
+    <br />
+    <br />
+
+
+    <p>Print a page.</p>
+    <pre>
+    const printPage = () => window.print();
+    </pre>
+    <button onclick="printPage()">Print page</button>
+    <br />
+    <br />
+
+
+    <p>Resize window by specified pixels:</p>
+    <pre>
+    let miWin;
+    const opWin = () => miWin = window.open("", "", "width=100, height=70");
+    const resizeWindow = () => miWin.resizeBy(200, 100);
+    </pre>
+    <button onclick="opWin()">Open new window</button>
+    <button onclick="resizeWindow()">Resize window</button>
+    <br />
+    <br />
+
+
+    <p>Resize window to specified size:</p>
+    <pre>
+    let miWind;
+    const opWind = () => miWind = window.open("", "", "width=100, height=70");
+    const resWindow = () => miWind.resizeTo(400, 300);
+    </pre>
+    <button onclick="opWind()">Open new window</button>
+    <button onclick="resWindow()">Resize window</button>
+    <br />
+    <br />
+
+
+    <p>Scroll window by specified pixels:</p>
+    <pre>
+    const scrollWin = () => window.scrollBy(0, 200);
+    </pre>
+    <button onclick="scrollWin()">Scroll window by specified pixels</button>
+    <br />
+
+
+    <p>Scroll window to specified position:</p>
+    <pre>
+    const scrollWind = () => window.scrollTo(0, 200);
+    </pre>
+    <button onclick="scrollWind()">Scroll window to specified position</button>
+    <br />
+    <br />
+    <br />
+
+
+
+    <h4>Location Object</h4>
+    <p><b>location.assign()</b> & <b>location.replace()</b>:</p>
+    <pre>
+    const locAssign = () => location.assign("www.w3schools.com");
+    </pre>
+    <pre>
+    const locReplace = () => location.replace("www.w3schools.com");
+    </pre>
+    <button onclick="locAssign()">Load new page</button>
+    <button onclick="locReplace()">Replace current page</button>
+    <br />
+    <br />
+    <br />
+
+
+
+
+    <h2>Class</h2>
+    <pre>
+    class Thermostat {
+        constructor(fahrenheit) {
+            this.fahrenheit = fahrenheit;
+        }
+        get temperature() {
+            return (5 / 9) * (this.fahrenheit - 32);
+        }
+        set temperature(celsius) {
+            this.fahrenheit = (celsius * 9.0) / 5 + 32;
+        }
+    }
+    const thermos = new Thermostat(76);
+    let temp = thermos.temperature;
+    thermos.temperature = 26;
+    temp = thermos.temperature;
+    </pre>
+    <p id="demo5"></p>
+    <br />
+    <p id="demo6"></p>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <br />
+
+    <script src="index.js"></script>
 </body>
 </html>
